@@ -28,7 +28,7 @@ def search_for_char(source, c, minlen=16, maxlen=32):
         for i in range(1, len(partials)):
             #sys.stdout.write(f'.')
             #sys.stdout.flush()
-            result = partials[i](result) & 255
+            result = partials[i](result) & 127
             if chr(result) == c:
                 if i < minlen - 1:
                     #sys.stdout.write(f'*')
