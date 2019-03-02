@@ -7,7 +7,7 @@ This process repeats 64 times on average to find a suitable tuple. (That is, hal
 
 The returned operations and indices are combined pairwise by setting the high bit of the indices' byte to the encoded operation bit. These 127 bytes are prefixed with the seed byte, resulting in a 128 byte 'packed' block. The packed block is then appended to the source block to represent the encoded character.
 
-Strings of characters are encoded by 'chaining' together packed blocks of characters. The source of the next encoded character is derived by hashing the block of its predecessor. As a consequence, a string of characters is encoded into a final chain of (1 + n) * 128 bytes, where n is the length of the original string. That is, some random source block plus each packed block.
+Strings of characters are encoded by 'chaining' together packed blocks of characters. The source of the next encoded character is derived by hashing the block of its predecessor into another 128-byte block. As a consequence, a string of characters is encoded into a final chain of (1 + n) * 128 bytes, where n is the length of the original string. That is, some random source block plus each packed block.
 
 Chained strings are decoded by performing the process in reverse.
 
