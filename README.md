@@ -12,3 +12,5 @@ Strings of characters are encoded by 'chaining' together packed blocks of charac
 Chained strings are decoded by performing the process in reverse.
 
 This method of encoding can be used to obfuscate strings in a manner which requires sequential evaluation to decode. Multiple printable strings can be encoded by appending a null byte (c-style), delimiting each string.
+
+Characters can be encoded into blocks of varying length, but some higher level method would be required to encode the length of a string.
